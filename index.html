@@ -843,18 +843,75 @@
 
   /* ── RESPONSIVE ── watermark appears, normal orb hides ── */
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
+    nav {
+      padding: 1rem 1.25rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: nowrap;
+    }
+    .nav-links a { font-size: 11px; letter-spacing: 0.03em; }
+    /* Keep the connect button visible */
+    .nav-contact-btn { font-size: 11px; padding: 8px 12px 8px 14px; white-space: nowrap; }
     .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
     .hero-right { display: none; }
     /* Show watermark orb behind name */
     .orb-watermark { display: block; }
+
+    /* ── STATS — KEY FIX ── */
+    .stats-bar-wrap { padding: 2rem 1.25rem; }
+    .stats-row {
+      grid-template-columns: 1fr;   /* stack everything */
+      gap: 1rem;
+      margin-bottom: 0;
+    }
+    /* Key Highlights: full width, stacks first */
+    .stat-item.snapshot-item {
+      grid-column: 1 / -1;
+    }
+    /* The 3 number cards sit in a row below */
+    .stats-row .stat-item:not(.snapshot-item) {
+      /* they'll naturally stack 1-per-row in a 1-col grid,
+         so switch to a mini 3-col sub-grid via flex trick */
+    }
+    /* Use a wrapper trick: wrap the 3 number cards in a row */
+    .stats-numbers-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
     section { padding: 4rem 1.5rem; }
-    .stats-row { grid-template-columns: repeat(2,1fr); }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .skills-grid { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem; text-align: center; }
+  }
+
+  @media (max-width: 540px) {
+    nav { grid-template-columns: auto 1fr auto; gap: 0.25rem; padding: 0.85rem 0.85rem; }
+    .nav-links { gap: 0.7rem; }
+    .nav-links a { font-size: 10px; }
+    .nav-contact-btn { font-size: 10px; padding: 7px 10px; gap: 4px; }
+    .nav-contact-btn .chevron { display: none; }
+  }
+
+  @media (max-width: 400px) {
+    /* On very small phones, hide nav links and just show logo + button */
+    .nav-links { display: none; }
+    nav { grid-template-columns: auto auto; justify-content: space-between; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-name { font-size: 2.4rem; }
+    .hero-btns { flex-direction: column; }
+    .hero-btns a { text-align: center; }
   }
 </style>
 </head>
@@ -1311,6 +1368,38 @@
 </footer>
 
 <script>
+
+  // ── STATS MOBILE LAYOUT ──
+  // On mobile, restructure the stats-row so 3 number cards are in their own grid row
+  function fixStatsLayout() {
+    const row = document.querySelector('.stats-row');
+    if (!row) return;
+    const numberCards = Array.from(row.querySelectorAll('.stat-item:not(.snapshot-item)'));
+    if (window.innerWidth <= 900) {
+      // Check if wrapper already exists
+      if (!document.querySelector('.stats-numbers-row')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'stats-numbers-row';
+        wrapper.style.cssText = 'display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;';
+        numberCards.forEach(card => wrapper.appendChild(card));
+        row.appendChild(wrapper);
+        // Update stats-row to 1 col
+        row.style.gridTemplateColumns = '1fr';
+      }
+    } else {
+      // Restore for desktop
+      const wrapper = document.querySelector('.stats-numbers-row');
+      if (wrapper) {
+        Array.from(wrapper.children).forEach(child => row.appendChild(child));
+        wrapper.remove();
+        row.style.gridTemplateColumns = '';
+      }
+    }
+  }
+
+  fixStatsLayout();
+  window.addEventListener('resize', fixStatsLayout);
+
 // Dropdown toggle
 function toggleDropdown(id) {
   const wrap = document.getElementById(id);
