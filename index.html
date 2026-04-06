@@ -991,8 +991,9 @@
 </section>
 
 <!-- STATS -->
-<div style="background:var(--bg2); padding: 2.5rem 4rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<div style="background:var(--bg2); padding: 2.5rem 4rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" class="stats-bar-wrap">
   <div class="stats-row">
+    <!-- Key Highlights — full width on mobile -->
     <div class="stat-item snapshot-item reveal" style="transition-delay:0.2s">
       <span class="snapshot-label">Key Highlights</span>
       <ul class="snapshot-list">
@@ -1003,17 +1004,20 @@
         <li>Flask and explainable AI solutions</li>
       </ul>
     </div>
-    <div class="stat-item reveal">
-      <span class="stat-num">6+</span>
-      <span class="stat-desc">academic projects</span>
-    </div>
-    <div class="stat-item reveal" style="transition-delay:0.1s">
-      <span class="stat-num">3</span>
-      <span class="stat-desc">certifications</span>
-    </div>
-    <div class="stat-item reveal" style="transition-delay:0.3s">
-      <span class="stat-num">10+</span>
-      <span class="stat-desc">tools & technologies</span>
+    <!-- The 3 number stats wrapped together for mobile row layout -->
+    <div class="stats-numbers-row" style="display:contents">
+      <div class="stat-item reveal">
+        <span class="stat-num">6+</span>
+        <span class="stat-desc">academic projects</span>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:0.1s">
+        <span class="stat-num">3</span>
+        <span class="stat-desc">certifications</span>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:0.3s">
+        <span class="stat-num">10+</span>
+        <span class="stat-desc">tools & technologies</span>
+      </div>
     </div>
   </div>
 </div>
