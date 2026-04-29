@@ -14,6 +14,7 @@
     --accent2: #5bc4f0;
     --accent3: #f0b55b;
     --accent4: #e2ea0b;
+    --accent5:#b60909c5; 
     --text: #e8e8f0;
     --muted: #7a7a9a;
     --border: rgba(126,234,204,0.12);
@@ -75,6 +76,37 @@
   }
   .nav-links a:hover { color: var(--accent); }
 
+  /* ── NAV RIGHT ACTIONS ── */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* ── RESUME DOWNLOAD BUTTON ── */
+  .btn-resume {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 9px 16px;
+    background: transparent;
+    color: var(--accent3);
+    border: 1px solid rgba(240,181,91,0.4);
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .btn-resume:hover {
+    background: rgba(240,181,91,0.08);
+    border-color: rgba(240,181,91,0.7);
+  }
+  .btn-resume svg { flex-shrink: 0; }
+
   /* ── CONTACT BUTTON WITH DROPDOWN ── */
   .contact-btn-wrap {
     position: relative;
@@ -98,11 +130,11 @@
 
   .nav-contact-btn {
     font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    padding: 10px 20px 10px 24px;
-    background: var(--accent);
-    color: #0a0a0f;
-    border: none;
+    font-size: 12px;
+    padding: 15px 28px;
+    background: transparent;
+    border: 1px solid rgba(126,234,204,0.4);
+    color: var(--accent);
     border-radius: 2px;
     cursor: pointer;
     font-weight: 400;
@@ -112,7 +144,8 @@
     align-items: center;
     gap: 8px;
   }
-  .nav-contact-btn:hover { background: #a8f3dc; }
+  .nav-contact-btn:hover { background:rgba(126,234,204,0.08);
+  border-color: rgba(126,234,204,0.7);}
   .nav-contact-btn .chevron {
     font-size: 10px;
     transition: transform 0.2s;
@@ -567,6 +600,7 @@
   .ci-blue { background: rgba(91,196,240,0.1); color: var(--accent2); }
   .ci-orange { background: rgba(240,181,91,0.1); color: var(--accent3); }
   .ci-yellow { background: rgba(235, 235, 38, 0.1); color: var(--accent4); }
+  .ci-red {background: rgba(237, 64, 64, 0.129); color: var(--accent5);}
 
   /* ── SKILLS ── */
   .skills-grid {
@@ -698,6 +732,22 @@
     margin-top: 2px;
     flex-shrink: 0;
   }
+
+  /* AUC badge on Lloyds card */
+  .auc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #34d399;
+    padding: 4px 10px;
+    border: 1px solid rgba(52,211,153,0.3);
+    border-radius: 2px;
+    background: rgba(52,211,153,0.06);
+    margin-top: 1rem;
+  }
+  .auc-badge strong { font-size: 13px; }
 
   /* ── EDUCATION ── */
   .edu-timeline { position: relative; padding-left: 2rem; }
@@ -928,20 +978,17 @@
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="contact-btn-wrap" id="navContactWrap">
-    <button class="nav-contact-btn" onclick="toggleDropdown('navContactWrap')">
-      Connect with me <span class="chevron">▾</span>
-    </button>
-    <div class="contact-dropdown">
-      <a href="mailto:tanushreedalvi72@gmail.com">
-        <div class="drop-icon di-email">@</div>
-        tanushreedalvi72@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/tanushree-dalvi-797b0331a/" target="_blank">
-        <div class="drop-icon di-li">in</div>
-        LinkedIn Profile
-      </a>
-    </div>
+  <div class="nav-actions">
+    <!-- Resume Download Button — replace href with your actual CV file path -->
+    <a class="btn-resume" href="https://raw.githubusercontent.com/tanushreed72/Tanushree_Portfolio/main/Tanushree_R_Dalvi_UK.pdf" download="Tanushree_Dalvi_UK.pdf" title="Download CV">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      <span>download cv</span>
+    </a>
+  
   </div>
 </nav>
 
@@ -955,7 +1002,7 @@
     <div class="orb-ring"><div class="orb-dot"></div></div>
     <div class="orb-ring"><div class="orb-dot"></div></div>
     <div class="orb-center">
-      <span class="orb-center-num">6</span>
+      <span class="orb-center-num">7</span>
       <span class="orb-center-label">Major<br>Projects</span>
     </div>
     <div class="floating-tags">
@@ -976,7 +1023,21 @@
     </p>
     <div class="hero-btns">
       <a class="btn-primary" href="#projects">view my work</a>
-      <a class="btn-outline" href="#contact">get in touch</a>
+    <div class="contact-btn-wrap" id="navContactWrap">
+    <button class="nav-contact-btn" onclick="toggleDropdown('navContactWrap')">
+      Connect with me <span class="chevron">▾</span>
+    </button>
+    <div class="contact-dropdown">
+      <a href="mailto:tanushreedalvi72@gmail.com">
+        <div class="drop-icon di-email">@</div>
+        tanushreedalvi72@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/tanushree-dalvi-797b0331a/" target="_blank">
+        <div class="drop-icon di-li">in</div>
+        LinkedIn Profile
+      </a>
+    </div>
+  </div>
     </div>
   </div>
 
@@ -986,7 +1047,7 @@
       <div class="orb-ring"><div class="orb-dot"></div></div>
       <div class="orb-ring"><div class="orb-dot"></div></div>
       <div class="orb-center">
-        <span class="orb-center-num">6</span>
+        <span class="orb-center-num">7</span>
         <span class="orb-center-label">Major<br>Projects</span>
       </div>
       <div class="floating-tags">
@@ -1017,11 +1078,11 @@
     <!-- The 3 number stats wrapped together for mobile row layout -->
     <div class="stats-numbers-row" style="display:contents">
       <div class="stat-item reveal">
-        <span class="stat-num">6+</span>
+        <span class="stat-num">7+</span>
         <span class="stat-desc">academic projects</span>
       </div>
       <div class="stat-item reveal" style="transition-delay:0.1s">
-        <span class="stat-num">4</span>
+        <span class="stat-num">5</span>
         <span class="stat-desc">certifications</span>
       </div>
       <div class="stat-item reveal" style="transition-delay:0.3s">
@@ -1051,6 +1112,11 @@
       <div style="background:var(--bg3); border:1px solid var(--border); border-radius:4px; padding:2rem; font-family:'DM Mono',monospace; font-size:12px; line-height:2; color:var(--muted);">
         <div class="about-certs">
         <p style="font-family:'DM Mono',monospace; font-size:11px; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.75rem;">Certifications</p>
+        <div class="cert-item">
+          <a href="https://www.theforage.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_xLEaEsKCZ4uafKTaA_1776803660325_completion_certificate.pdf" target="_blank" class="cert-item">
+            <div class="cert-icon ci-red">◈</div>
+            British Airways - Data Science Job Simulation — Forage</a>
+        </div>
         <div class="cert-item">
           <a href="https://www.theforage.com/completion-certificates/Zbnc2o4ok6kD2NEXx/EuvC8GPjkZ6xaiP9p_Zbnc2o4ok6kD2NEXx_xLEaEsKCZ4uafKTaA_1775939323380_completion_certificate.pdf" target="_blank" class="cert-item">
             <div class="cert-icon ci-yellow">◈</div>
@@ -1186,7 +1252,7 @@
 <section id="projects">
   <div class="section-label">03 / projects</div>
   <h2 class="section-title">What I've built</h2>
-  <p class="section-sub">Six end-to-end projects demonstrating practical data science expertise across explainable AI, cloud-based pipelines, NLP systems, and executive BI dashboards.</p>
+  <p class="section-sub">Seven end-to-end projects demonstrating practical data science expertise across explainable AI, cloud-based pipelines, NLP systems, and executive BI dashboards.</p>
 
   <div class="projects-grid">
 
@@ -1212,8 +1278,54 @@
       </a>
     </div>
 
-    <div class="project-card pc-blue reveal" style="transition-delay:0.1s">
+    <!-- 02 — LLOYDS BANKING GROUP -->
+    <div class="project-card pc-teal reveal" style="transition-delay:0.05s">
       <span class="project-number">02</span>
+      <div class="project-tags">
+        <span class="ptag pt-teal">Random Forest</span>
+        <span class="ptag pt-teal">scikit-learn</span>
+        <span class="ptag pt-teal">Python</span>
+        <span class="ptag pt-blue">Lloyds Simulation</span>
+      </div>
+      <h3 class="project-title">Customer Churn Prediction — Lloyds Banking Group Data Science Simulation</h3>
+      <p class="project-desc">Developed a predictive churn model for Lloyds Banking Group's Data Science & Analytics team. Completed advanced preprocessing, model training and hyperparameter tuning, achieving strong performance metrics.</p>
+      <ul class="project-outcomes">
+        <li>Built customer churn model using Random Forest and ensemble ML algorithms</li>
+        <li>Conducted advanced preprocessing: missing values, encoding, feature scaling</li>
+        <li>Optimised hyperparameters with GridSearchCV for peak performance</li>
+        <li>Applied feature importance analysis to generate actionable business insights</li>
+      </ul>
+      <div class="auc-badge">
+        ROC-AUC Score: <strong>0.82</strong>
+      </div>
+    </div>
+
+    <!-- 03 — BRITISH AIRWAYS -->
+    <div class="project-card pc-blue reveal" style="transition-delay:0.1s">
+      <span class="project-number">03</span>
+      <div class="project-tags">
+        <span class="ptag pt-blue">Web Scraping</span>
+        <span class="ptag pt-blue">Python</span>
+        <span class="ptag pt-blue">Predictive Modelling</span>
+        <span class="ptag pt-orange">BA Simulation</span>
+      </div>
+      <h3 class="project-title">Customer Review Analysis & Buying Behaviour Prediction — British Airways Simulation</h3>
+      <p class="project-desc">Explored how data science drives strategic decisions at British Airways. Scraped and analysed customer review data to uncover key sentiment trends, then built a predictive model to identify factors influencing booking behaviour.</p>
+      <ul class="project-outcomes">
+        <li>Scraped and cleaned customer review data at scale using Python</li>
+        <li>Conducted sentiment and topic analysis to surface actionable findings</li>
+        <li>Built a predictive model for customer buying behaviour</li>
+        <li>Presented data-driven recommendations in a structured insight report</li>
+      </ul>
+      <a href="https://github.com/tanushreed72/British_Airways_Data_Science" target="_blank" style="display:inline-flex;align-items:center;gap:7px;margin-top:1.1rem;font-family:'DM Mono',monospace;font-size:11px;color:var(--accent2);text-decoration:none;border:1px solid rgba(91,196,240,0.25);padding:5px 12px;border-radius:2px;background:rgba(91,196,240,0.04);transition:all 0.2s;" onmouseover="this.style.background='rgba(91,196,240,0.1)'" onmouseout="this.style.background='rgba(91,196,240,0.04)'">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        view on github
+      </a>
+    </div>
+
+    <!-- 04 — BIOMEDICAL NLP -->
+    <div class="project-card pc-blue reveal" style="transition-delay:0.15s">
+      <span class="project-number">04</span>
       <div class="project-tags">
         <span class="ptag pt-blue">BERT</span>
         <span class="ptag pt-blue">RoBERTa</span>
@@ -1234,8 +1346,9 @@
       </a>
     </div>
 
-    <div class="project-card pc-orange reveal" style="transition-delay:0.1s">
-      <span class="project-number">03</span>
+    <!-- 05 — CLOUD PIPELINE -->
+    <div class="project-card pc-orange reveal" style="transition-delay:0.2s">
+      <span class="project-number">05</span>
       <div class="project-tags">
         <span class="ptag pt-orange">BigQuery</span>
         <span class="ptag pt-orange">Google Cloud</span>
@@ -1252,8 +1365,9 @@
       </ul>
     </div>
 
-    <div class="project-card pc-mixed reveal" style="transition-delay:0.2s">
-      <span class="project-number">04</span>
+    <!-- 06 — ML SUITE -->
+    <div class="project-card pc-mixed reveal" style="transition-delay:0.25s">
+      <span class="project-number">06</span>
       <div class="project-tags">
         <span class="ptag pt-teal">scikit-learn</span>
         <span class="ptag pt-teal">Python</span>
@@ -1273,8 +1387,9 @@
       </a>
     </div>
 
-    <div class="project-card pc-blue reveal" style="transition-delay:0.1s">
-      <span class="project-number">05</span>
+    <!-- 07 — HR DASHBOARD -->
+    <div class="project-card pc-blue reveal" style="transition-delay:0.3s">
+      <span class="project-number">07</span>
       <div class="project-tags">
         <span class="ptag pt-orange">Power BI</span>
         <span class="ptag pt-orange">Excel</span>
@@ -1291,51 +1406,6 @@
       </ul>
     </div>
 
-    <div class="project-card pc-teal reveal" style="transition-delay:0.2s">
-      <span class="project-number">06</span>
-      <div class="project-tags">
-        <span class="ptag pt-orange">Excel</span>
-        <span class="ptag pt-blue">PowerPoint</span>
-        <span class="ptag pt-teal">Accenture Simulation</span>
-      </div>
-      <h3 class="project-title">Social Buzz Analysis — Accenture Data Analyst Engagement Simulation</h3>
-      <p class="project-desc">Simulated a real Accenture data analyst engagement for a social media client — analysed 7 datasets, identified content trends, and delivered a strategic insight presentation.</p>
-      <ul class="project-outcomes">
-        <li>Analysed 7 datasets to surface social media content trends</li>
-        <li>Identified top-performing content categories and engagement drivers</li>
-        <li>Translated findings into a strategic decision-making presentation</li>
-        <li>Delivered client-ready deck aligned to Accenture consulting standards</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" style="background:var(--bg2)">
-  <div class="section-label">04 / education</div>
-  <h2 class="section-title">Academic foundation</h2>
-  <p class="section-sub">A rigorous computer science foundation from Mumbai, further strengthened by a Master’s degree in Data Science from Surrey.</p>
-
-  <div class="edu-timeline">
-    <div class="edu-item reveal">
-      <div class="edu-year">2025 — 2026</div>
-      <h3 class="edu-degree">MSc Data Science</h3>
-      <div class="edu-school">University of Surrey · Guildford, United Kingdom</div>
-      <div class="edu-detail">
-        <span class="edu-badge">Merit</span>
-        <span style="color:var(--muted)">ML · NLP · Cloud Analytics · Big Data · Statistical Modelling</span>
-      </div>
-    </div>
-    <div class="edu-item reveal" style="transition-delay:0.15s">
-      <div class="edu-year">2021 — 2024</div>
-      <h3 class="edu-degree">BSc Computer Science</h3>
-      <div class="edu-school">University of Mumbai · Mumbai, India</div>
-      <div class="edu-detail">
-        <span class="edu-badge">CGPA 8.58 / 10</span>
-        <span style="color:var(--muted)">Algorithms · Databases · Software Engineering · Statistics</span>
-      </div>
-    </div>
   </div>
 </section>
 
