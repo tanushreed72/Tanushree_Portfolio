@@ -14,7 +14,8 @@
     --accent2: #5bc4f0;
     --accent3: #f0b55b;
     --accent4: #e2ea0b;
-    --accent5:#b60909c5; 
+    --accent5:#b60909c5;
+    --accent6:#b00899;
     --text: #e8e8f0;
     --muted: #7a7a9a;
     --border: rgba(126,234,204,0.12);
@@ -601,7 +602,7 @@
   .ci-orange { background: rgba(240,181,91,0.1); color: var(--accent3); }
   .ci-yellow { background: rgba(235, 235, 38, 0.1); color: var(--accent4); }
   .ci-red {background: rgba(237, 64, 64, 0.129); color: var(--accent5);}
-
+  .ci-purple {background: rgba(222, 64, 237, 0.129); color: var(--accent6);}
   /* ── SKILLS ── */
   .skills-grid {
     display: grid;
@@ -1002,7 +1003,7 @@
     <div class="orb-ring"><div class="orb-dot"></div></div>
     <div class="orb-ring"><div class="orb-dot"></div></div>
     <div class="orb-center">
-      <span class="orb-center-num">7</span>
+      <span class="orb-center-num">8</span>
       <span class="orb-center-label">Major<br>Projects</span>
     </div>
     <div class="floating-tags">
@@ -1047,7 +1048,7 @@
       <div class="orb-ring"><div class="orb-dot"></div></div>
       <div class="orb-ring"><div class="orb-dot"></div></div>
       <div class="orb-center">
-        <span class="orb-center-num">7</span>
+        <span class="orb-center-num">8</span>
         <span class="orb-center-label">Major<br>Projects</span>
       </div>
       <div class="floating-tags">
@@ -1078,11 +1079,11 @@
     <!-- The 3 number stats wrapped together for mobile row layout -->
     <div class="stats-numbers-row" style="display:contents">
       <div class="stat-item reveal">
-        <span class="stat-num">7+</span>
+        <span class="stat-num">8+</span>
         <span class="stat-desc">academic projects</span>
       </div>
       <div class="stat-item reveal" style="transition-delay:0.1s">
-        <span class="stat-num">5</span>
+        <span class="stat-num">6</span>
         <span class="stat-desc">certifications</span>
       </div>
       <div class="stat-item reveal" style="transition-delay:0.3s">
@@ -1112,6 +1113,11 @@
       <div style="background:var(--bg3); border:1px solid var(--border); border-radius:4px; padding:2rem; font-family:'DM Mono',monospace; font-size:12px; line-height:2; color:var(--muted);">
         <div class="about-certs">
         <p style="font-family:'DM Mono',monospace; font-size:11px; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.75rem;">Certifications</p>
+        <div class="cert-item">
+          <a href="https://www.theforage.com/completion-certificates/SKZxezskWgmFjRvj9/Tcz8gTtprzAS4xSoK_SKZxezskWgmFjRvj9_xLEaEsKCZ4uafKTaA_1777670652901_completion_certificate.pdf" target="_blank" class="cert-item">
+            <div class="cert-icon ci-purple">◈</div>
+            BCG Data Science Job Simulation on Forage</a>
+        </div>
         <div class="cert-item">
           <a href="https://www.theforage.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_xLEaEsKCZ4uafKTaA_1776803660325_completion_certificate.pdf" target="_blank" class="cert-item">
             <div class="cert-icon ci-red">◈</div>
@@ -1263,6 +1269,7 @@
         <span class="ptag pt-teal">Explainable AI</span>
         <span class="ptag pt-teal">Flask</span>
         <span class="ptag pt-teal">NLP</span>
+        <span class="ptag pt-orange">Dissertation</span>
       </div>
       <h3 class="project-title">MicrobiomeBot — Explainable AI System for Microbial Interaction Inference</h3>
       <p class="project-desc">An interactive chatbot and AI pipeline that infers microbial interactions using logic-based machine learning, NLP querying, and data visualisation. Deployed end-to-end.</p>
@@ -1295,14 +1302,41 @@
         <li>Optimised hyperparameters with GridSearchCV for peak performance</li>
         <li>Applied feature importance analysis to generate actionable business insights</li>
       </ul>
-      <div class="auc-badge">
-        ROC-AUC Score: <strong>0.82</strong>
-      </div>
+      <a href="https://github.com/tanushreed72/Llyods_banking_simulation_data_science" target="_blank" style="display:inline-flex;align-items:center;gap:7px;margin-top:1.1rem;font-family:'DM Mono',monospace;font-size:11px;color:var(--accent2);text-decoration:none;border:1px solid rgba(91,196,240,0.25);padding:5px 12px;border-radius:2px;background:rgba(91,196,240,0.04);transition:all 0.2s;" onmouseover="this.style.background='rgba(91,196,240,0.1)'" onmouseout="this.style.background='rgba(91,196,240,0.04)'">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        view on github
+      </a>
     </div>
 
-    <!-- 03 — BRITISH AIRWAYS -->
-    <div class="project-card pc-blue reveal" style="transition-delay:0.1s">
+    <!-- 03 — BCG Data Science Job Simulation -->
+    <div class="project-card pc-orange reveal" style="transition-delay:0.05s">
       <span class="project-number">03</span>
+      <div class="project-tags">
+        <span class="ptag pt-orange">Random Forest</span>
+        <span class="ptag pt-orange">scikit-learn</span>
+        <span class="ptag pt-orange">Python</span>
+        <span class="ptag pt-teal">BCG Simulation</span>
+      </div>
+      <h3 class="project-title">Customer Churn Analysis — BCG Data Science Job Simulation</h3>
+      <p class="project-desc">Built a customer churn prediction pipeline for a BCG Data Science simulation, covering exploratory data analysis, feature engineering, and Random Forest modelling, culminating in an executive summary with actionable retention recommendations.</p>
+      <ul class="project-outcomes">
+        <li>Completed a customer churn analysis simulation for XYZ Analytics, demonstrating advanced data analytics skills, identifying essential client data and outlining a strategic investigation approach.</li>
+        <li>Conducted efficient data analysis using Python, including Pandas and NumPy. Employed data visualisation techniques for insightful trend interpretation.</li>
+        <li>Completed the engineering and optimisation of a random forest model, achieving an 50% recall rate in predicting customer churn.</li>
+        <li>Completed a concise executive summary for the team, delivering actionable insights for informed decision-making based on the analysis.</li>
+      </ul>
+      <div class="auc-badge">
+        ROC-AUC Score: <strong>0.66</strong>
+      </div>
+      <a href="https://github.com/tanushreed72/BCG_simulation_data_science" target="_blank" style="display:inline-flex;align-items:center;gap:7px;margin-top:1.1rem;font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);text-decoration:none;border:1px solid rgba(126,234,204,0.25);padding:5px 12px;border-radius:2px;background:rgba(126,234,204,0.1);transition:all 0.2s;" onmouseover="this.style.background='rgba(91,196,240,0.1)'" onmouseout="this.style.background='rgba(91,196,240,0.04)'">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        view on github
+      </a>
+    </div>
+
+    <!-- 04 — BRITISH AIRWAYS -->
+    <div class="project-card pc-blue reveal" style="transition-delay:0.1s">
+      <span class="project-number">04</span>
       <div class="project-tags">
         <span class="ptag pt-blue">Web Scraping</span>
         <span class="ptag pt-blue">Python</span>
@@ -1323,9 +1357,9 @@
       </a>
     </div>
 
-    <!-- 04 — BIOMEDICAL NLP -->
+    <!-- 05 — BIOMEDICAL NLP -->
     <div class="project-card pc-blue reveal" style="transition-delay:0.15s">
-      <span class="project-number">04</span>
+      <span class="project-number">05</span>
       <div class="project-tags">
         <span class="ptag pt-blue">BERT</span>
         <span class="ptag pt-blue">RoBERTa</span>
@@ -1346,9 +1380,9 @@
       </a>
     </div>
 
-    <!-- 05 — CLOUD PIPELINE -->
+    <!-- 06 — CLOUD PIPELINE -->
     <div class="project-card pc-orange reveal" style="transition-delay:0.2s">
-      <span class="project-number">05</span>
+      <span class="project-number">06</span>
       <div class="project-tags">
         <span class="ptag pt-orange">BigQuery</span>
         <span class="ptag pt-orange">Google Cloud</span>
@@ -1365,9 +1399,9 @@
       </ul>
     </div>
 
-    <!-- 06 — ML SUITE -->
+    <!-- 07 — ML SUITE -->
     <div class="project-card pc-mixed reveal" style="transition-delay:0.25s">
-      <span class="project-number">06</span>
+      <span class="project-number">07</span>
       <div class="project-tags">
         <span class="ptag pt-teal">scikit-learn</span>
         <span class="ptag pt-teal">Python</span>
@@ -1387,9 +1421,9 @@
       </a>
     </div>
 
-    <!-- 07 — HR DASHBOARD -->
+    <!-- 08 — HR DASHBOARD -->
     <div class="project-card pc-blue reveal" style="transition-delay:0.3s">
-      <span class="project-number">07</span>
+      <span class="project-number">08</span>
       <div class="project-tags">
         <span class="ptag pt-orange">Power BI</span>
         <span class="ptag pt-orange">Excel</span>
