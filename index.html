@@ -32,6 +32,7 @@
     font-size: 16px;
     line-height: 1.7;
     overflow-x: hidden;
+
   }
 
   /* ── NOISE TEXTURE OVERLAY ── */
@@ -480,6 +481,9 @@
   .ftag:nth-child(3) { bottom: 25%; left: -5%; animation-delay: 1s; color: var(--accent3); border-color: rgba(240,181,91,0.3); background: rgba(240,181,91,0.05); }
   .ftag:nth-child(4) { bottom: 5%; right: 5%; animation-delay: 1.5s; }
   .ftag:nth-child(5) { top: 50%; right: -8%; animation-delay: 0.8s; color: var(--accent2); border-color: rgba(91,196,240,0.3); background: rgba(91,196,240,0.05); }
+  .ftag:nth-child(6) { top: -5%; right: 20%; animation-delay: 0.3s; color: var(--accent3); border-color: rgba(240,181,91,0.3); background: rgba(240,181,91,0.05); }
+  .ftag:nth-child(7) { bottom: 48%; left: -12%; animation-delay: 1.2s; color: var(--accent); border-color: rgba(126,234,204,0.3); background: rgba(126,234,204,0.05); }
+  .ftag:nth-child(8) { bottom: -2%; left: 25%; animation-delay: 0.6s; color: var(--accent2); border-color: rgba(91,196,240,0.3); background: rgba(91,196,240,0.05); }
 
   @keyframes floatTag {
     0%,100% { transform: translateY(0); }
@@ -1012,6 +1016,9 @@
       <span class="ftag">BERT / NLP</span>
       <span class="ftag">Power BI</span>
       <span class="ftag">scikit-learn</span>
+      <span class="ftag">Random Forest</span>
+      <span class="ftag">Predictive Modelling</span>
+      <span class="ftag">Web Scraping</span>
     </div>
   </div>
 
@@ -1057,6 +1064,9 @@
         <span class="ftag">BERT / NLP</span>
         <span class="ftag">Power BI</span>
         <span class="ftag">scikit-learn</span>
+        <span class="ftag">Random Forest</span>
+        <span class="ftag">Predictive Modelling</span>
+        <span class="ftag">Web Scraping</span>
       </div>
     </div>
   </div>
@@ -1171,6 +1181,7 @@
       </div>
     </div>
 
+    <!-- Card 2: ML & Data Science — added Random Forest, Predictive Modelling, Web Scraping, Feature Engineering -->
     <div class="skill-card reveal" style="transition-delay:0.1s">
       <div class="skill-card-title"><span class="skill-card-icon">◎</span> ML & Data Science</div>
       <div class="skill-bar-wrap">
@@ -1178,12 +1189,22 @@
         <div class="skill-bar-track"><div class="skill-bar-fill" data-w="88" style="background:linear-gradient(90deg,var(--accent2),var(--accent))"></div></div>
       </div>
       <div class="skill-bar-wrap">
-        <div class="skill-bar-label"><span>NLP (BERT / RoBERTa)</span><span>82%</span></div>
+        <div class="skill-bar-label"><span>NLP (BERT / RoBERTa / BiLSTM / CRF)</span><span>82%</span></div>
         <div class="skill-bar-track"><div class="skill-bar-fill" data-w="82" style="background:linear-gradient(90deg,var(--accent2),var(--accent))"></div></div>
+      </div>
+      <div class="skill-bar-wrap">
+        <div class="skill-bar-label"><span>Random Forest / Ensemble ML</span><span>85%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="85" style="background:linear-gradient(90deg,var(--accent2),var(--accent))"></div></div>
       </div>
       <div class="skill-bar-wrap">
         <div class="skill-bar-label"><span>pandas / NumPy</span><span>90%</span></div>
         <div class="skill-bar-track"><div class="skill-bar-fill" data-w="90" style="background:linear-gradient(90deg,var(--accent2),var(--accent))"></div></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:0.75rem;">
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:3px 8px;border:1px solid rgba(91,196,240,0.2);border-radius:2px;color:var(--accent2);background:rgba(91,196,240,0.05)">Predictive Modelling</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:3px 8px;border:1px solid rgba(91,196,240,0.2);border-radius:2px;color:var(--accent2);background:rgba(91,196,240,0.05)">Feature Engineering</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:3px 8px;border:1px solid rgba(91,196,240,0.2);border-radius:2px;color:var(--accent2);background:rgba(91,196,240,0.05)">Hyperparameter Tuning</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:3px 8px;border:1px solid rgba(91,196,240,0.2);border-radius:2px;color:var(--accent2);background:rgba(91,196,240,0.05)">Class Imbalance Handling</span>
       </div>
     </div>
 
@@ -1248,7 +1269,7 @@
         <span style="font-family:'DM Mono',monospace;font-size:11px;padding:4px 9px;border:1px solid var(--border);border-radius:2px;color:var(--muted)">BigQuery ML</span>
         <span style="font-family:'DM Mono',monospace;font-size:11px;padding:4px 9px;border:1px solid var(--border);border-radius:2px;color:var(--muted)">GCP Storage</span>
         <span style="font-family:'DM Mono',monospace;font-size:11px;padding:4px 9px;border:1px solid var(--border);border-radius:2px;color:var(--muted)">PowerPoint</span>
-      </div>
+        </div>
     </div>
 
   </div>
@@ -1320,7 +1341,7 @@
       <h3 class="project-title">Customer Churn Analysis — BCG Data Science Job Simulation</h3>
       <p class="project-desc">Built a customer churn prediction pipeline for a BCG Data Science simulation, covering exploratory data analysis, feature engineering, and Random Forest modelling, culminating in an executive summary with actionable retention recommendations.</p>
       <ul class="project-outcomes">
-        <li>Completed a customer churn analysis simulation for PowerCo — SME Electricity Division, demonstrating advanced data analytics skills, identifying essential client data and outlining a strategic investigation approach.</li>
+        <li>Completed a customer churn analysis simulation for XYZ Analytics, demonstrating advanced data analytics skills, identifying essential client data and outlining a strategic investigation approach.</li>
         <li>Conducted efficient data analysis using Python, including Pandas and NumPy. Employed data visualisation techniques for insightful trend interpretation.</li>
         <li>Engineered and optimised a Random Forest model for customer churn prediction. Model evaluation showed strong overall accuracy (90%) and a ROC-AUC of 0.66; however, performance on the minority churn class was limited (recall: 3%) due to class imbalance.</li>
         <li>Developed a concise executive summary for the team, delivering actionable insights for informed decision-making based on the analysis.</li>
